@@ -1,0 +1,55 @@
+.setting-page-container {
+  display: flex; 
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa; 
+}
+
+/* 사이드바 스타일 */
+.setting-sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #eee;
+  padding: 40px 20px;
+}
+
+.sidebar-title {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 30px;
+  padding-left: 15px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  border: none;
+  background: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* 클릭된 메뉴 하이라이트  */
+.nav-item.active {
+  background-color: #fff5ed;
+  color: #ff7a1b;
+  font-weight: 700;
+}
+
+/* 오른쪽 콘텐츠 영역 */
+.setting-content {
+  flex: 1; 
+  padding: 50px;
+  display: flex;
+  justify-content: flex-start; 
+}
