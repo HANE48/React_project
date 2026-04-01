@@ -28,11 +28,11 @@ const AccountSetting = () => {
           </div>
         </div>
       </div>
-      {/* 닉네임, 이메일 입력창 부분 생략 (기존 코드 유지) */}
+   
       <button className="save-btn">저장하기</button>
     </div>
   );
 };
 
-// 파일 이름과 동일하게 내보내야 합니다.
+
 export default AccountSetting;
