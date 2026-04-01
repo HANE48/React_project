@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 export const User = [
-=======
-let User = [
->>>>>>> 5ffd78b5560db2ad3c50dc81348b19e179481551
     {
         id: 'Admin',
         pw: '1q2w3e4r',
@@ -31,10 +27,4 @@ let User = [
         isSetting: true,
         profile_path: 'none'
     }
-<<<<<<< HEAD
 ];
-=======
-];
-
-export default User;
->>>>>>> 5ffd78b5560db2ad3c50dc81348b19e179481551

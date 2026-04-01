@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import User from '../JSON/User.js'
+import User from './JSON/User.js'
 import { useParams } from "react-router-dom";
 import { BrowserRouter, Router, Route, Link } from "react-router-dom";
 // 비밀번호 변경
