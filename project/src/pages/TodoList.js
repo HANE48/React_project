@@ -1,18 +1,8 @@
-import React from 'react';
+import React from "react";
 
-function TodoList({ todos = [], onToggle, onRemove }) {
-
-  if (todos.length === 0) {
-    return (
-      <div className="list-container empty-state">
-        <p style={{ color: '#ccc' }}>새로운 할 일을 등록해 보세요!</p>
-      </div>
-    );
-  }
-
-  const isAllDone = todos.every(todo => todo.isDone);
-
-  if (isAllDone) {
+function ToDoList({ list, onToggle, onRemove }) {
+  // 1. 모든 일을 완료했거나 목록이 비었을 때 보여줄 완료 화면 (이미지 속 그 화면!)
+  if (list.length > 0 && list.every(item => item.isDone)) {
     return (
       <div className="list-container empty-state">
         <div className="check-circle">✓</div>
@@ -21,28 +11,25 @@ function TodoList({ todos = [], onToggle, onRemove }) {
     );
   }
 
+  // 2. 할 일이 남아 있을 때 목록 보여주기
   return (
     <div className="list-container">
-      {todos.map(todo => (
-        <div key={todo.id} className="todo-item">
+      {/* 할 일 목록이 있을 때만 타이틀 표시 (A님 코드 스타일 반영) */}
+      {list.length > 0 && <p className="list-label">할 일 목록:</p>}
+      
+      {list.map((item) => (
+        <div key={item.id} className="todo-item">
           <input 
             type="checkbox" 
-            checked={todo.isDone} 
-            onChange={() => onToggle?.(todo.id)} 
+            checked={item.isDone} 
+            onChange={() => onToggle(item.id)} 
           />
-          <span className={todo.isDone ? 'done' : ''}>
-            {todo.text}
-          </span>
-          <button 
-            className="remove-btn" 
-            onClick={() => onRemove?.(todo.id)}
-          >
-            <span role="img" aria-label="remove">⊖</span>
-          </button>
+          <span className={item.isDone ? "done" : ""}>{item.text}</span>
+          <button className="remove-btn" onClick={() => onRemove(item.id)}>⊖</button>
         </div>
       ))}
     </div>
   );
 }
 
-export default TodoList;
+export default ToDoList;
