@@ -28,3 +28,5 @@ export const User = [
         profile_path: 'none'
     }
 ];
+
+export default User;

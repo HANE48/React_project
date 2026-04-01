@@ -48,3 +48,4 @@ export const List = [
         }
     }
 ];
+export default List
