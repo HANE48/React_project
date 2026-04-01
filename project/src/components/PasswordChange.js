@@ -27,7 +27,8 @@ export default function PasswordChange() {
         }
     }
 
-
+    console.log(originPw);
+    console.log(pw[0]);
 
     return (
         <div>
@@ -35,8 +36,8 @@ export default function PasswordChange() {
             {/* 기존 비밀번호 입력창 */}
             <InputOriginPw isRight={isRight} originPw={originPw} setOriginPw={setOriginPw} />
             {
-                originRight ? <SetNewPw newPw={newPw} setNewPw={setNewPw} newRight={newRight} setNewRight={setNewRight} morePw={morePw} setMorePw={setMorePw}  /> 
-                : <div>비밀번호가 틀렸습니다</div>
+                originRight ? <SetNewPw newPw={newPw} setNewPw={setNewPw} newRight={newRight} setNewRight={setNewRight} morePw={morePw} setMorePw={setMorePw} />
+                    : <div>비밀번호가 틀렸습니다</div>
             }
 
 
@@ -58,10 +59,10 @@ function InputOriginPw(props) {
 }
 
 function SetNewPw(props) {
-    const checkPw = ()=>{
-        if(props.newPw === props.morePw){
+    const checkPw = () => {
+        if (props.newPw === props.morePw) {
             props.setNewRight(true);
-        }else{
+        } else {
             props.setNewRight(false);
         }
     }
@@ -72,7 +73,7 @@ function SetNewPw(props) {
             <h2>비밀번호 변경</h2>
             <input type="password" placeholder="새로운 비밀번호를 입력해주세요" value={props.newPw}
                 onChange={(e) => { props.setNewPw(e.target.value) }} />
-                <br/>
+            <br />
             <input type="password" placeholder="다시 한번 입력해 주세요" value={props.morePw}
                 onChange={(e) => { props.setMorePw(e.target.value) }} />
             <button onClick={checkPw}>확인</button>
